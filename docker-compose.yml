@@ -4,6 +4,6 @@ services:
     build: .
     tty: true
     volumes:
-      - ".:/PortFolio"
+      - ".:/Portfolio"
     ports:
       - "3000:3000"

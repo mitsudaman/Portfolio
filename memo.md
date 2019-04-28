@@ -11,3 +11,36 @@ yarn add @nuxtjs/vuetify
 
 # firebase twitter api
 https://github.com/kazuyaseki/firebase-for-twitter-api
+
+
+
+# vuetify color
+
+// main.styl
+$body-font-family = 'PixelMplus', 'ヒラギノ丸ゴ Pro', 'Hiragino Maru Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO' !important;
+
+
+
+$material-light.background = #fff !important;
+
+@import '~vuetify/src/stylus/main.styl'
+
+
+# 
+
+.animationBtn {
+  animation: animScale 4s infinite ease-out;
+  transform-origin: 50% 50%;
+  animation-play-state:running;
+}
+@keyframes animScale {
+  0% { transform: scale(0.8, 0.8); }
+  10% { transform: scale(1.1, 1.1); }
+  20% { transform: scale(1, 1); }
+  30% { transform: scale(1.1, 1.1); }
+  40% { transform: scale(1, 1); }
+}
+
+
+#icon svg
+https://www.flaticon.com/
