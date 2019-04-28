@@ -41,6 +41,20 @@ $material-light.background = #fff !important;
   40% { transform: scale(1, 1); }
 }
 
+# class break point 
 
+:class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}"
+    
+
+    
 #icon svg
 https://www.flaticon.com/
+
+
+# gitub pages 
+
+(1)yarn genrerate で dist 作る
+(2)dist 配下で
+(3)git init add commit 
+(4)git remote push
+

@@ -1,36 +1,52 @@
 <template>
   <div>
     <h2>プロフィール</h2>
-    <v-layout row wrap justify-center mt-5>
-      <v-flex xs5 sm3 >
-        <div 
-        :class="{ active: isHtmlActive }"
-        @click="clickHtml">
-          <svg class="card" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m64 265.375v38.625h-32v-38.625h-32v118.625h32v-48h32v48h32v-118.625zm0 0"/><path d="m224 265.375h-96v32h32v86.625h32v-86.625h32zm0 0"/><path d="m384 384h-32v-80l-32 32-32-32v80h-32v-118.625h38.625l25.375 25.378906 25.375-25.378906h38.625zm0 0"/><path d="m512 384h-96v-118.625h32v86.625h64zm0 0"/></g></svg>
-        </div>
-        <div text-center>
-          <img src="~/assets/img/1dama.png"/>
-        </div>
-      </v-flex>
-      <v-flex xs5 sm3 offset-xs1 >
-        <div 
-        :class="{ active: isCssActive }"
-        @click="clickCss"> 
-          <svg class="card" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m128 400c-26.464844 0-48-21.535156-48-48v-64c0-26.464844 21.535156-48 48-48s48 21.535156 48 48v16h-32v-16c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16v64c0 8.816406 7.167969 16 16 16s16-7.183594 16-16v-16h32v16c0 26.464844-21.535156 48-48 48zm0 0"/><path d="m256 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/><path d="m384 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/></g></svg>
-
+    <v-layout row wrap justify-center mt-4>
+      <v-flex sm7  class="profile">
+        <v-layout row wrap justify-center>
+          <v-flex xs6 sm4>
+            <div>
+              <img width="100%" src="~/assets/img/mitsudama.png"/>
+            </div>
+            <div text-center>
+              No.???
+            </div>
+          </v-flex>
+          <v-flex xs6 sm4 text-lef
+          :class="{'mt-0': $vuetify.breakpoint.smAndDown, 'mt-4': $vuetify.breakpoint.lgAndUp}"t>
+            <div class="pt-4 pl-2 text-xs-left">
+              <p>ミツダマ</p>
+              <p>えんじにあニセモン</p>
+              <p>たかさ 1.7mm</p>
+              <p>おもさ りんご3こぶん</p>
+              <!-- <ul>
+                <li>aaaa</li>
+                <li>aaaa</li>
+                <li>aaaa</li>
+                <li>aaaa</li>
+              </ul> -->
+            </div>
+          </v-flex>
+        </v-layout>
+        <hr style="border: 1px solid #000;">
+        <div class="mt-3">
+          <p>ふくおかにせいそくするうぇぶのぷろぐらまー。</p>
+          <p>ちきんなんばんをこよなくあいする。ぶらっくな</p>
+          <p>かいしゃからすぐいなくなるしゅうせいをもつ。</p>
         </div>
       </v-flex>
     </v-layout>
-    <h2>スキルいちらん</h2>
-    <v-layout row wrap justify-center mt-5>
+
+
+
+
+    <h2 class="mt-5">おぼえたスキルいちらん</h2>
+    <v-layout row wrap justify-center mt-4>
       <v-flex xs5 sm3 >
         <div 
         :class="{ active: isHtmlActive }"
         @click="clickHtml">
           <svg class="card" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m64 265.375v38.625h-32v-38.625h-32v118.625h32v-48h32v48h32v-118.625zm0 0"/><path d="m224 265.375h-96v32h32v86.625h32v-86.625h32zm0 0"/><path d="m384 384h-32v-80l-32 32-32-32v80h-32v-118.625h38.625l25.375 25.378906 25.375-25.378906h38.625zm0 0"/><path d="m512 384h-96v-118.625h32v86.625h64zm0 0"/></g></svg>
-        </div>
-        <div text-center>
-          <img src="~/assets/img/1dama.png"/>
         </div>
       </v-flex>
       <v-flex xs5 sm3 offset-xs1 >
@@ -171,11 +187,14 @@ export default {
   margin-left: -15px;
   border: 15px solid transparent;
   border-top: 15px solid #000;
-  /* border-left: 15px solid #000;
-  border-right: 15px solid #000; */
 }
 
-
+.profile {
+  border: 6px double #000;
+}
+.prof-dis{
+  font-size: 2em;
+}
 
 
 
