@@ -46,7 +46,7 @@ $material-light.background = #fff !important;
 :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}"
     
 
-    
+
 #icon svg
 https://www.flaticon.com/
 
@@ -58,3 +58,5 @@ https://www.flaticon.com/
 (3)git init add commit 
 (4)git remote push
 
+# ドラクエ風ロゴ
+https://qiita.com/ykyk1218/items/f8926a2b417fd5dc0661

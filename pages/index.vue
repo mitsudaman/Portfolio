@@ -1,8 +1,15 @@
 <template>
   <div>
-    <h2>プロフィール</h2>
     <v-layout row wrap justify-center mt-4>
-      <v-flex sm7  class="profile">
+      <v-flex sm8>
+        <h2>プロフィール</h2>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap justify-center mt-5>
+      <v-flex sm7  
+      class="profile"
+      :class="{ profile_active: isProfileActive }"
+      @click="clickProfile">
         <v-layout row wrap justify-center>
           <v-flex xs6 sm4>
             <div>
@@ -13,26 +20,20 @@
             </div>
           </v-flex>
           <v-flex xs6 sm4 text-lef
-          :class="{'mt-0': $vuetify.breakpoint.smAndDown, 'mt-4': $vuetify.breakpoint.lgAndUp}"t>
+          :class="{'mt-0': $vuetify.breakpoint.smAndDown, 'mt-4': $vuetify.breakpoint.lgAndUp}">
             <div class="pt-4 pl-2 text-xs-left">
               <p>ミツダマ</p>
               <p>えんじにあニセモン</p>
               <p>たかさ 1.7mm</p>
               <p>おもさ りんご3こぶん</p>
-              <!-- <ul>
-                <li>aaaa</li>
-                <li>aaaa</li>
-                <li>aaaa</li>
-                <li>aaaa</li>
-              </ul> -->
             </div>
           </v-flex>
         </v-layout>
         <hr style="border: 1px solid #000;">
         <div class="mt-3">
-          <p>ふくおかにせいそくするうぇぶのぷろぐらまー。</p>
-          <p>ちきんなんばんをこよなくあいする。ぶらっくな</p>
-          <p>かいしゃからすぐいなくなるしゅうせいをもつ。</p>
+          <p>ふくおかに せいそくする うぇぶの ぷろぐらまー。</p>
+          <p>ぶらっくな かいしゃから すぐいなくなる。2びょう</p>
+          <p>かんに 1000もじの コードを かくことができる。</p>
         </div>
       </v-flex>
     </v-layout>
@@ -40,20 +41,24 @@
 
 
 
-    <h2 class="mt-5">おぼえたスキルいちらん</h2>
-    <v-layout row wrap justify-center mt-4>
+    <v-layout row wrap justify-center mt-5>
+      <v-flex sm8>
+        <h2>おぼえたスキル</h2>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap justify-center mt-5>
       <v-flex xs5 sm3 >
         <div 
         :class="{ active: isHtmlActive }"
         @click="clickHtml">
-          <svg class="card" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m64 265.375v38.625h-32v-38.625h-32v118.625h32v-48h32v48h32v-118.625zm0 0"/><path d="m224 265.375h-96v32h32v86.625h32v-86.625h32zm0 0"/><path d="m384 384h-32v-80l-32 32-32-32v80h-32v-118.625h38.625l25.375 25.378906 25.375-25.378906h38.625zm0 0"/><path d="m512 384h-96v-118.625h32v86.625h64zm0 0"/></g></svg>
+          <svg class="skill_svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m64 265.375v38.625h-32v-38.625h-32v118.625h32v-48h32v48h32v-118.625zm0 0"/><path d="m224 265.375h-96v32h32v86.625h32v-86.625h32zm0 0"/><path d="m384 384h-32v-80l-32 32-32-32v80h-32v-118.625h38.625l25.375 25.378906 25.375-25.378906h38.625zm0 0"/><path d="m512 384h-96v-118.625h32v86.625h64zm0 0"/></g></svg>
         </div>
       </v-flex>
       <v-flex xs5 sm3 offset-xs1 >
         <div 
         :class="{ active: isCssActive }"
         @click="clickCss"> 
-          <svg class="card" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m128 400c-26.464844 0-48-21.535156-48-48v-64c0-26.464844 21.535156-48 48-48s48 21.535156 48 48v16h-32v-16c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16v64c0 8.816406 7.167969 16 16 16s16-7.183594 16-16v-16h32v16c0 26.464844-21.535156 48-48 48zm0 0"/><path d="m256 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/><path d="m384 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/></g></svg>
+          <svg class="skill_svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m128 400c-26.464844 0-48-21.535156-48-48v-64c0-26.464844 21.535156-48 48-48s48 21.535156 48 48v16h-32v-16c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16v64c0 8.816406 7.167969 16 16 16s16-7.183594 16-16v-16h32v16c0 26.464844-21.535156 48-48 48zm0 0"/><path d="m256 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/><path d="m384 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/></g></svg>
 
         </div>
       </v-flex>
@@ -111,7 +116,7 @@
         <div 
         class="balloon1"
         @click="clickCss"> 
-          <svg class="card" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m128 400c-26.464844 0-48-21.535156-48-48v-64c0-26.464844 21.535156-48 48-48s48 21.535156 48 48v16h-32v-16c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16v64c0 8.816406 7.167969 16 16 16s16-7.183594 16-16v-16h32v16c0 26.464844-21.535156 48-48 48zm0 0"/><path d="m256 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/><path d="m384 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/></g></svg>
+          <svg class="skill_svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m512 96v384c0 17.679688-14.320312 32-32 32h-448c-17.679688 0-32-14.320312-32-32v-384zm0 0" fill="#e4edfb"/><path d="m0 0h512v128h-512zm0 0" fill="#77959e"/><path d="m64 48h32v32h-32zm0 0" fill="#fff"/><path d="m128 48h32v32h-32zm0 0" fill="#fff"/><path d="m432 80h-224c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h224c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" fill="#62808c"/><g fill="#9575cd"><path d="m128 400c-26.464844 0-48-21.535156-48-48v-64c0-26.464844 21.535156-48 48-48s48 21.535156 48 48v16h-32v-16c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16v64c0 8.816406 7.167969 16 16 16s16-7.183594 16-16v-16h32v16c0 26.464844-21.535156 48-48 48zm0 0"/><path d="m256 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/><path d="m384 400c-26.464844 0-48-21.535156-48-48h32c0 8.816406 7.167969 16 16 16s16-7.183594 16-16-7.167969-16-16-16c-26.464844 0-48-21.535156-48-48s21.535156-48 48-48 48 21.535156 48 48h-32c0-8.816406-7.167969-16-16-16s-16 7.183594-16 16 7.167969 16 16 16c26.464844 0 48 21.535156 48 48s-21.535156 48-48 48zm0 0"/></g></svg>
 
         </div>
       </v-flex>
@@ -125,6 +130,53 @@
         <div id="upper_thigh_right"></div>
       </div>
     </v-layout>
+
+
+    <v-layout row wrap justify-center mt-5>
+      <v-flex sm8>
+        <h2>召喚サービス</h2>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap justify-center mt-3>
+      <v-flex xs12 sm5 mt-4 >
+        <div
+        :class="{ active: isBbsWikiActive }"
+        @click="clickBbsWiki">
+          <img class="card" width="100%" src="~/assets/img/bbswiki.png"/>
+        </div>
+        <div class="service_title">BBSWiki</div>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap justify-center mt-5>
+      <v-flex xs12 sm5>
+        <div
+        :class="{ active: isTSMakerActive }"
+        @click="clickTSMaker">
+          <img class="card" width="100%" src="~/assets/img/TSMaker.png"/>
+        </div>
+        <div class="service_title">時間割メーカー</div>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap justify-center mt-5>
+      <v-flex xs12 sm5 >
+        <div
+        :class="{ active: isHaikuMakerActive }"
+        @click="clickHaikuMaker">
+          <img class="card" width="100%" src="~/assets/img/HaikuMaker_ogp.jpg"/>
+        </div>
+        <div class="service_title">俳句メーカー</div>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap justify-center mt-5>
+      <v-flex xs12 sm5>
+        <div
+        :class="{ active: isChoiceMakerActive }"
+        @click="clickChoiceMaker">
+          <img class="card" width="100%" src="~/assets/img/ogp.jpg"/>
+        </div>
+        <div class="service_title">究極の選択メーカー</div>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 <script>
@@ -132,10 +184,14 @@ import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
-      card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.',
+      isProfileActive: false,
       isHtmlActive: false,
       isCssActive: false,
       isJsActive: false,
+      isBbsWikiActive: false,
+      isTSMakerActive: false,
+      isHaikuMakerActive: false,
+      isChoiceMakerActive: false,
     }
   },
   methods: {
@@ -143,34 +199,73 @@ export default {
       this.flg = !this.flg
       console.log(this.flg) 
     },
+    clickProfile(){
+      this.resetActive()
+      this.isProfileActive = true;
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.myself)
+    },
     clickHtml(){
       this.resetActive()
       this.isHtmlActive = true;
-      this.$store.commit('comment/change', this.$store.state.comment.skillList.html)
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.html)
     },
     clickCss(){
       this.resetActive()
       this.isCssActive = true;
-      this.$store.commit('comment/change', this.$store.state.comment.skillList.css)
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.css)
     },
     clickJs(){
       this.resetActive()
       this.isJsActive = true;
-      this.$store.commit('comment/change', this.$store.state.comment.skillList.javascript)
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.javascript)
+    },
+    clickBbsWiki(){
+      this.resetActive()
+      this.isBbsWikiActive = true;
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.bbswiki)
+    },
+    clickTSMaker(){
+      this.resetActive()
+      this.isTSMakerActive = true;
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.TSMaker)
+    },
+    clickHaikuMaker(){
+      this.resetActive()
+      this.isHaikuMakerActive = true;
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.HaikuMaker)
+    },
+    clickChoiceMaker(){
+      this.resetActive()
+      this.isChoiceMakerActive = true;
+      this.$store.commit('comment/change', this.$store.state.comment.commentList.ChoiceMaker)
     },
     resetActive(){
+      this.isProfileActive = false;
       this.isHtmlActive = false;
       this.isCssActive = false;
       this.isJsActive = false;
+      this.isBbsWikiActive = false;
+      this.isTSMakerActive = false;
+      this.isHaikuMakerActive = false;
+      this.isChoiceMakerActive = false;
     }
   }
 }
 </script>
 
 <style type="text/css">
+h2 {
+  font-size: 2.5em;
+  border: 2px solid black;
+  border-radius: 1em;
+}
+.skill_svg {
+  font-size: 1.6em;
+  border-radius: 1em;
+}
 .card {
   font-size: 1.6em;
-  /* border: 2px solid black; */
+  border: 2px solid black;
   border-radius: 1em;
 }
 .active {
@@ -182,43 +277,23 @@ export default {
 .active:before {
   content: "";
   position: absolute;
-  top: -12%;
+  top: -25px;
   left: 50%;
   margin-left: -15px;
   border: 15px solid transparent;
   border-top: 15px solid #000;
+  animation: Flash1 1s infinite;
 }
 
 .profile {
   border: 6px double #000;
 }
-.prof-dis{
+.profile_active {
+  border-color: #0000ff;
+}
+.service_title{
   font-size: 2em;
 }
-
-
-
-
-/* #stick div{
- -moz-border-radius:4px 4px 4px 4px;
- -webkit-border-radius: 4px;
- border-radius: 4px;
-
- border:1px solid #000000;
- background-color:#000;
- 
- position:absolute;
- height:4px;
-}
-#stick #body{
- -webkit-transform: rotate(90deg);
- -moz-transform:rotate(90deg);
- 
- width:120px;
- left:190px;
- top:182px;
-} */
-
 
 
 

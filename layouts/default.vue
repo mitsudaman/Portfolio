@@ -104,7 +104,7 @@ export default {
 }
 
 .balloon_area{
-  background-color: rgba(0, 0, 0, 0.6)!important;
+  background-color: rgba(0, 0, 0, 0.7)!important;
   border: 2px solid white;
   border-radius: 1em;
 }
@@ -145,13 +145,5 @@ export default {
   left: 6px;
   width: 99%;
   z-index: 3;
-}
-.sidemenu:before {
-    background-color: #000;
-    color: #fff;
-    content: "ああああああああ";
-    position: relative;
-    left: 45px;
-    top: 12px;
 }
 </style>
